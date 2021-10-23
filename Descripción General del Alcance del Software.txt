@@ -1,0 +1,32 @@
+Tema: Ciencia y Tecnología
+
+Descripción
+_____________________________________________________________________________________________________________
+La aplicación web a desarrollar proveerá un sitió estatal donde los investigadores pueden difundir
+los resultados de sus investigaciones y las personas interesadas en leer artículos de ciencia y 
+tecnología para distintos propósitos, puedan consultar dicha información de una fuente confiable y seria. 
+
+Objetivo
+_____________________________________________________________________________________________________________
+Proveer un medio donde investigadores puedan compartir conocimiento que fomente la actividad científica
+del estado.
+
+Funcionalidades  
+_____________________________________________________________________________________________________________
+
+De la interfaz
+  • Organizar las investigaciones por:
+     • Autor.
+     • Área de investigación.
+     • Fecha.
+  • Respeta la regla de los tres clics.
+
+Del usuario común 
+  • Poner a disposición la información de contacto de los investigadores.
+  • Permite la navegación entre las diferentes publicaciones.
+
+Del Investigador
+  • Acceso a la plataforma.
+  • Agregar nuevos tópicos.
+  • Compartir su información de contacto.
+  • Solicitar colaboradores para una investigación.

@@ -1,1 +1,22 @@
-<a>Login funciona</a>
+<div class="row">
+    <div class="col-md-4 mx-auto">
+        <div class="card">
+            <div class="card-header">
+                Inicio de Sesión
+            </div>
+            <div class="card-body">
+                <form (submit)="inisesion()">
+                    <div class="form-group">
+                        <input type="text" [(ngModel)]="user.user" name="usuario" class="form-control" placeholder="Usuario" required autofocus>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" [(ngModel)]="user.pass" name="contrania" class="form-control" placeholder="Contraseña" required autofocus>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">
+                        Iniciar Sesión
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

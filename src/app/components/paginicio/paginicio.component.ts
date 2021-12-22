@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TasksService} from '../../services/tasks.service'
 
 @Component({
   selector: 'app-paginicio',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaginicioComponent implements OnInit {
 
-  constructor() { }
+  tasks = [];
+
+  constructor(private tasksServices: TasksService) { }
 
   ngOnInit(): void {
+    this.tasksServices.getTasks()
+    .subscribe(
+      res => {
+        console.log(res)
+        this.tasks = res;
+      },
+      err => console.log(err)
+    )
   }
 
 }

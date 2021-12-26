@@ -7,7 +7,7 @@ const User = require('../models/User');
 
 const jwt = require('jsonwebtoken');
 
-router.get('/',(req,res) => res.send('Hello World'))
+//router.get('/',(req,res) => res.send('Hello World'))
 
 router.post('/registro', async (req,res) => {
     const{ user, pass, email} = req.body;
@@ -88,6 +88,15 @@ router.get('/perfil', verifyToken,(req,res)=>{
     ])
 })
 
+//----------------------ESTO ES DEL CRUD---------------------------
+const pubCtrl = require('../controllers/pub.controller.js')
+router.get('/', pubCtrl.getPubs);
+router.post('/', pubCtrl.createPub);
+router.get('/:id', pubCtrl.getPub);
+router.put('/:id', pubCtrl.editPub);
+router.delete('/:id', pubCtrl.deletePub);
+//-----------------------------------------------------------------
+
 module.exports = router;
 
 function verifyToken(req,res,next){
@@ -112,3 +121,11 @@ function verifyToken(req,res,next){
 
     console.log(req.userId)
 }
+
+//AQUI ES TODO LO REFERENTE AL CRUD---------------------------------------------------------------------------
+
+
+
+
+
+

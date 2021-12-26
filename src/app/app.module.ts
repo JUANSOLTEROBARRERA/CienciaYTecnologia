@@ -14,7 +14,6 @@ import { PrivadasComponent } from './components/privadas/privadas.component';
 import { AuthGuard } from './auth.guard';
 import {TokenInterceptorService} from './services/token-interceptor.service'
 
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -1,0 +1,26 @@
+###
+GET http://localhost:3000/CienciaYTecnologia
+###
+POST http://localhost:3000/CienciaYTecnologia
+Content-Type: application/json
+
+{
+    "nombre": "prueba7 xd",
+    "titulo": "titulo xd",
+    "desc": "También se elige un BDR en caso de que falle el DR. Si el DR deja de producir paquetes de saludo, el BDR se asciende a sí mismo y asume la función de DR. Todos los otros routers que no son DR ni BDR se convierten en DROTHER (un router que no es DR ni BDR).",
+    "enlace": "xd.com"
+}
+###
+GET  http://localhost:3000/CienciaYTecnologia/61c7ec8a04ba44d1901f7d88
+###
+DELETE  http://localhost:3000/CienciaYTecnologia/61c823251e74089d2d01ee89
+###
+PUT  http://localhost:3000/CienciaYTecnologia/61c7f0cb67b64d61f0703f56
+Content-Type: application/json
+
+{
+    "nombre": "tayko",
+    "titulo": "titulo xd",
+    "desc": "articulo xd",
+    "enlace": "xd.com"
+}

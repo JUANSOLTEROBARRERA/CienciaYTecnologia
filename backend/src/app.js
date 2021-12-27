@@ -18,3 +18,5 @@ app.use(morgan('dev'));
 app.use(require('./routes/index.js'))
 
 module.exports = app;
+
+//LO REFERENTE AL GUARDADO DE IMAGENES Y PDFS

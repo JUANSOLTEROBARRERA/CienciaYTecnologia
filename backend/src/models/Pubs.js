@@ -4,7 +4,7 @@ const pubsSchema = new Schema({
     nombre: {type:String, required: true},
     titulo: {type:String, required: true},
     desc: {type:String, required: true},
-    enlace: {type:String, required: true},
+    enlace: {type:String, required: false},
 },{
     timestamps: true,
     versionKey: false

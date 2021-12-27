@@ -11,7 +11,7 @@ import {AuthGuard} from './auth.guard'
 import { AcercaComponent } from './components/acerca/acerca.component';
 
 const routes: Routes = [
-  { path: 'contactos', component:ContactosComponent},
+  { path: 'contactos', component:ContactosComponent, canActivate: [AuthGuard]},
   { path: 'inicio', component:PaginicioComponent},
   { path: 'login', component:LoginComponent},
   { path: 'registro', component:RegistroComponent},

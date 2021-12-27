@@ -1,9 +1,9 @@
-<h1>CONTACTOS</h1>
+<h1>Contactos</h1>
 <div class="row">
 
 
   <!-- TABLE -->
-  <div class="col-md-8">
+  <div class="col-md-15">
     <table class="table table-striped">
       <thead>
         <th>Usuario</th>
@@ -13,6 +13,7 @@
       <tbody>
 
         <tr *ngFor="let user of authService.users">
+          <ng-container *ngIf="!authService.revisar( user.user ); else esdeel">
           <td>{{ user.user }}</td>
           <td>{{ user.email }}</td>
           <td>
@@ -20,6 +21,10 @@
               <a href="https://mail.google.com/mail/u/1/#inbox" style="color: rgb(255, 255, 255); text-decoration: none;">Contactar</a>
             </button>
           </td>
+        </ng-container>
+        <ng-template #esdeel>
+
+        </ng-template>
         </tr>
       </tbody>
     </table>

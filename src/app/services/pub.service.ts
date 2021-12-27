@@ -16,7 +16,7 @@ export class PubService {
     enlace: ''
   };
   pubs: Pub[];
-
+  message:any;
   constructor(private http: HttpClient) {
     this.pubs = [];
   }
@@ -25,9 +25,13 @@ export class PubService {
     return this.http.get<Pub[]>(this.URL_API);
   }
   createPub(pub: Pub){
+    this.message = localStorage.getItem('username');
+    pub.nombre = this.message;
     return this.http.post(this.URL_API, pub);
   }
   putPub(pub: Pub){
+    this.message = localStorage.getItem('username');
+    pub.nombre = this.message;
     return this.http.put(`${this.URL_API}/${pub._id}`, pub);
   }
   deletePub(_id: String){

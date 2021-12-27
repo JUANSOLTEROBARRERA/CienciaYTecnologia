@@ -3,6 +3,7 @@ import { TasksService } from '../../services/tasks.service'
 import { PubService } from '../../services/pub.service';
 import { NgForm } from '@angular/forms'
 import { Pub } from 'src/app/models/pub';
+import {AuthService} from '../../services/auth.service'
 
 @Component({
   selector: 'app-paginicio',
@@ -12,8 +13,9 @@ import { Pub } from 'src/app/models/pub';
 export class PaginicioComponent implements OnInit {
 
   tasks = [];
+  
 
-  constructor(private tasksServices: TasksService, public PubServices: PubService) { }
+  constructor(private tasksServices: TasksService, public PubServices: PubService, public authService:AuthService) { }
 
   ngOnInit(): void {
     this.getPubs();
@@ -43,9 +45,13 @@ export class PaginicioComponent implements OnInit {
   addPub(form: NgForm) {
     if (form.value._id) {
       this.PubServices.putPub(form.value).subscribe(
-        res => console.log(res),
+        res => {
+          console.log(res);
+          },
         err => console.error(err)
       )
+      form.reset()
+      this.getPubs()
     } else {
       this.PubServices.createPub(form.value).subscribe(
         res => {
@@ -68,5 +74,9 @@ export class PaginicioComponent implements OnInit {
   }
   editPub(pub: Pub) {
     this.PubServices.selectedPub = pub;
+    this.getPubs();
+  }
+  getValue() {
+    return localStorage.getItem('username');  
   }
 }

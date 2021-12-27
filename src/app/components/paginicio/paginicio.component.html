@@ -10,7 +10,6 @@
         <th>Título</th>
         <th>Descripción</th>
         <th>Enlace</th>
-        <th>Acciones</th>
       </thead>
       <tbody>
         <tr *ngFor="let pub of PubServices.pubs">
@@ -18,20 +17,15 @@
           <td>{{ pub.titulo }}</td>
           <td>{{ pub.desc }}</td>
           <td>{{ pub.enlace }}</td>
-          <td>
-            <button class="btn btn-secondary btn-sm" (click)="editPub(pub)">
-              <i class="material-icons">edit</i>
-            </button>
-            <button class="btn btn-danger btn-sm" (click)="deletePub(pub._id!)">
-              <i class="material-icons">delete</i>
-            </button>
-          </td>
         </tr>
       </tbody>
     </table>
   </div>
 
   <!-- FORM -->
+  <ng-container *ngIf="!authService.loggedIn(); else loggedIn">
+  </ng-container>
+  <ng-template #loggedIn>
     <div class="col-md-4">
       <div class="card">
         <div class="card-body p-4">
@@ -40,9 +34,10 @@
           <form #pubForm="ngForm" (ngSubmit)="addPub(pubForm)">
             <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="PubServices.selectedPub._id">
             <div class="form-group">
-              <input type="text" name="nombre" class="form=control" placeholder="Ingresa tu usuario"
+              <input type="hidden" name="nombre" class="form=control" placeholder="Ingresa tu usuario"
                 class="form-control" [(ngModel)]="PubServices.selectedPub.nombre">
             </div>
+
             <div class="form-group">
               <input type="text" name="titulo" class="form=control" placeholder="Ingresa el título" class="form-control"
                 [(ngModel)]="PubServices.selectedPub.titulo">
@@ -51,8 +46,9 @@
               <input type="text" name="desc" class="form=control" placeholder="Ingresa la descripción"
                 class="form-control" [(ngModel)]="PubServices.selectedPub.desc">
             </div>
+            <h1></h1>
             <div class="form-group">
-              <input type="text" name="enlace" class="form=control" placeholder="Ingresa el enlace" class="form-control"
+              <input type="file" name="enlace" class="form=control" placeholder="Ingresa el enlace" class="form-control"
                 [(ngModel)]="PubServices.selectedPub.enlace">
             </div>
             <button class="btn btn-primary mr-2" (click)="resetForm(pubForm)">
@@ -65,4 +61,5 @@
         </div>
       </div>
     </div>
+  </ng-template>
 </div>

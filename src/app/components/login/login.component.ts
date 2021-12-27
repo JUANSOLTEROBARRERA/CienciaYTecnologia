@@ -14,6 +14,8 @@ export class LoginComponent implements OnInit {
     pass:'',
   }
 
+  public username:any;
+
   constructor(
     private authService: AuthService,
     private router:Router
@@ -28,8 +30,9 @@ export class LoginComponent implements OnInit {
         console.log(res);
         localStorage.setItem('token', res.token);
         let message: string;
-        message = "Hello World Separate Declaration";
+        message = this.user.user;
         localStorage.setItem('username', message);
+        this.username = localStorage.getItem('username');
         console.log(localStorage.getItem('token'));
         this.router.navigate(['/solicitudes']);
       },

@@ -12,7 +12,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { PrivadasComponent } from './components/privadas/privadas.component';
 import { AuthGuard } from './auth.guard';
-import {TokenInterceptorService} from './services/token-interceptor.service'
+import {TokenInterceptorService} from './services/token-interceptor.service';
+import { AcercaComponent } from './components/acerca/acerca.component'
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {TokenInterceptorService} from './services/token-interceptor.service'
     PaginicioComponent,
     LoginComponent,
     RegistroComponent,
-    PrivadasComponent
+    PrivadasComponent,
+    AcercaComponent
   ],
   imports: [
     BrowserModule,

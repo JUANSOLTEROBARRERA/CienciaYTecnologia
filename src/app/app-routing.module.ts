@@ -8,12 +8,14 @@ import { PrivadasComponent } from './components/privadas/privadas.component';
 import { RegistroComponent } from './components/registro/registro.component';
 
 import {AuthGuard} from './auth.guard'
+import { AcercaComponent } from './components/acerca/acerca.component';
 
 const routes: Routes = [
   { path: 'contactos', component:ContactosComponent},
   { path: 'inicio', component:PaginicioComponent},
   { path: 'login', component:LoginComponent},
   { path: 'registro', component:RegistroComponent},
+  { path: 'acerca', component:AcercaComponent},
   { path: 'solicitudes', component:PrivadasComponent, canActivate: [AuthGuard]},
   { path: '', pathMatch: 'full', redirectTo: 'inicio' }
 ];

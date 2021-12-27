@@ -87,6 +87,14 @@ router.get('/perfil', verifyToken,(req,res)=>{
         }
     ])
 })
+router.get('/usuarios', async(req,res)=>{
+    const users = await User.find()
+    res.json(users)
+})
+router.get('/usuarios/:id', async(req,res)=>{
+    const users = await User.findById(req.params.id)
+    res.json(users)
+})
 
 //----------------------ESTO ES DEL CRUD---------------------------
 const pubCtrl = require('../controllers/pub.controller.js')

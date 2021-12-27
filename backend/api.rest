@@ -13,7 +13,7 @@ Content-Type: application/json
 ###
 GET  http://localhost:3000/CienciaYTecnologia/61c7ec8a04ba44d1901f7d88
 ###
-DELETE  http://localhost:3000/CienciaYTecnologia/61c823251e74089d2d01ee89
+DELETE  http://localhost:3000/CienciaYTecnologia/61c9253417765281dd3314c3
 ###
 PUT  http://localhost:3000/CienciaYTecnologia/61c7f0cb67b64d61f0703f56
 Content-Type: application/json
@@ -24,3 +24,5 @@ Content-Type: application/json
     "desc": "articulo xd",
     "enlace": "xd.com"
 }
+###
+GET http://localhost:3000/CienciaYTecnologia

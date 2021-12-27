@@ -6,7 +6,7 @@
   <div class="col-md-8">
     <table class="table table-striped">
       <thead>
-        <th>Nombre</th>
+        <th>Usuario</th>
         <th>Título</th>
         <th>Descripción</th>
         <th>Enlace</th>
@@ -16,8 +16,8 @@
           <td>{{ pub.nombre }}</td>
           <td>{{ pub.titulo }}</td>
           <td>{{ pub.desc }}</td>
-          <td>{{ pub.enlace }}
-            <a href="pub.enlace" download>Hola xd</a>
+          <td>
+            <a href="{{ pub.enlace }}">Ir al Artículo</a>
           </td>
         </tr>
       </tbody>
@@ -50,7 +50,7 @@
             </div>
             <h1></h1>
             <div class="form-group">
-              <input type="file" name="enlace" class="form=control" placeholder="Ingresa el enlace" class="form-control"
+              <input type="text" name="enlace" class="form=control" placeholder="Ingresa el enlace" class="form-control"
                 [(ngModel)]="PubServices.selectedPub.enlace">
             </div>
             <button class="btn btn-primary mr-2" (click)="resetForm(pubForm)">

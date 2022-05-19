@@ -22,16 +22,60 @@
         </tr>
       </tbody>
     </table>
-    <iframe
-      src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FELonMuskOfflcial%2Fposts%2F135871715494140&show_text=true&width=500"
-      width="810" height="186" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true"
-      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-    <iframe
-      src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FELonMuskOfflcial%2Fposts%2F135871575494154&show_text=true&width=500"
-      width="810" height="186" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true"
-      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+    <!-- CHATBOT -->
+    <br>
+    <img src="../../../assets/imagenes/baymax.png" style="width:240px; height:120px; margin-left:280px"
+      class="card-img-top" alt="...">
+    <div class="col-md-8">
+      <div class="card" style="width:600px; background-color:rgb(190, 36, 18);">
+        <div class="card-body p-">
+
+          <!-- FORM -->
+
+          <form>
+            <a style="font-style: oblique; color: azure;">Baymax / Asistente Inteligente</a>
+            <br><br>
+            <div class="form-group" style="scrollbar-width: thin;">
+              <!--
+              <textarea readonly class="form=control" class="form-control" placeholder="" style="height:180px; align-content:center; overflow:auto; border:2px outset #000000;" name="respuestas">       
+                >Baymax: Mi nombre es Baymax. Contestaré a tus preguntas acerca de la plataforma de Ciencia y Tecnología. Si quieres salir, escribe 'salir' 
+              </textarea>-->
+              <div class="card mb-3"
+                style="background-color: rgb(242, 242, 242); height:400px; align-content:center; overflow-y:scroll;
+                overflow-x: hidden; border:2px outset #000000; scrollbar-width: thin;">
+                <div class="row no-gutters">
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <div *ngFor="let obj of model">
+                      <div *ngIf="cambiarcolor(); then thenBlock else elseBlock"></div>
+                      <ng-template #thenBlock>
+                        <p style="color:rgb(254, 59, 30); margin-left: 20px; width:150%">{{obj.mensaje}}.</p>
+                      </ng-template>
+                      <ng-template #elseBlock>
+                        <p style="color:rgb(89, 72, 146); margin-left: 20px; width:150%">{{obj.mensaje}}.</p>
+                      </ng-template>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <input style="float:left; width:90%; background-color: rgb(242, 242, 242);; color:rgb(89, 72, 146);" type="text" name="preguntabot" class="form=control"
+                  placeholder="Ingresa tu pregunta" class="form-control">
+                <a>
+                  <img src="../../../assets/imagenes/send.png"
+                    style="float:right; width:30px; height:30px; margin-right: 7px; cursor: pointer;" class="card-img-top" alt="...">
+                </a>
+
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- TERMINA CHATBOT -->
   </div>
-  <!-- FORM -->
+
   <ng-container *ngIf="!authService.loggedIn(); else loggedIn">
   </ng-container>
   <ng-template #loggedIn>

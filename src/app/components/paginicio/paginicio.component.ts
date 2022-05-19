@@ -13,11 +13,25 @@ import {AuthService} from '../../services/auth.service'
 export class PaginicioComponent implements OnInit {
 
   tasks = [];
+  model: any;
+  lcolor: any;
   
 
   constructor(private tasksServices: TasksService, public PubServices: PubService, public authService:AuthService) { }
 
   ngOnInit(): void {
+    this.model=[
+      {mensaje: ">Baymax: Mi nombre es Baymax. Contestaré a tus preguntas acerca de la plataforma de Ciencia y Tecnología. Si quieres salir, escribe 'salir'"},
+      {mensaje:'>Tú: Hola'},
+      {mensaje: '>Baymax: Hola, ¿Cómo te puedo ayudar?'},
+      {mensaje:'>Tú: ¿Puedo publicar mi artículo aquí?'},
+      {mensaje: '>Baymax: Cualquier persona puede publicar sus artículos en esta plataforma.'},
+      {mensaje:'>Tú: ¿Puedo eliminar un artículo que publiqué?'},
+      {mensaje: '>Baymax: Puedes eliminar tus publicaciones yendo a la sección de mis publicaciones con la cuenta iniciada.'},
+      {mensaje:'>Tú: ¿Quién estuvo detrás del desarrollo de esta plataforma?'},
+      {mensaje: '>Baymax: Los nombres de los ingenieros que estuvieron detrás del desarrollo de esta plataforma se encuentran en la sección de acerca de nosotros.'}
+    ]
+    this.lcolor = false;
     this.getPubs();
     this.tasksServices.getTasks()
       .subscribe(
@@ -31,6 +45,10 @@ export class PaginicioComponent implements OnInit {
 
   resetForm(form: NgForm) {
     form.reset();
+  }
+  cambiarcolor(){
+    this.lcolor=!this.lcolor;
+    return this.lcolor;
   }
 
   getPubs() {
